@@ -103,9 +103,9 @@ externals : {
 
 ### function
 
-It might be useful to define your own function to control the behavior of what you want to externalize from webpack. [webpack-node-externals](https://www.npmjs.com/package/webpack-node-externals), for example, excludes all modules from the `node_modules` directory and provides some options to, for example, whitelist packages.
+定义自己的函数来控制要从webpack外部化的行为可能很有用。 例如，[webpack-node-externals](https://www.npmjs.com/package/webpack-node-externals)从node_modules目录中排除所有模块，并为例如白名单包提供一些选项。
 
-It basically comes down to this:
+它基本上归结为：
 
 ``` js
 externals: [
@@ -118,18 +118,17 @@ externals: [
 ],
 ```
 
-The `'commonjs ' + request` defines the type of module that needs to be externalized.
+`'commonjs ' + request` 定义了需要外化的模块类型。
 
 
 ### regex
 
-Every dependency that matches the given regular expression will be excluded from the output bundles.
+匹配给定正则表达式的每个依赖项都将从输出包中排除。
 
 ``` js
 externals: /^(jquery|\$)$/i
 ```
 
-In this case any dependency named `jQuery`, capitalized or not, or `$` would be externalized.
-
+在这种情况下，任何名为`jQuery`，大写或不大写或`$`的依赖都将被外部化。
 
 关于如何使用此 externals 配置的更多信息，请参考[如何编写 library](/guides/author-libraries)。
